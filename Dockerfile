@@ -1,39 +1,34 @@
 # Multi-stage build for production Next.js application
 
-# Stage 1: Dependencies
-FROM node:18-alpine AS deps
-RUN apk add --no-cache libc6-compat
-WORKDIR /app
-
-# Copy package files
-COPY package.json package-lock.json* ./
-RUN npm ci
-
-# Stage 2: Builder
+# Stage 1: Dependencies and Build
 FROM node:18-alpine AS builder
 WORKDIR /app
 
-# Copy dependencies from deps stage
-COPY --from=deps /app/node_modules ./node_modules
+# Copy package files and prisma schema
+COPY package.json package-lock.json* ./
+COPY prisma ./prisma
+
+# Install dependencies
+RUN npm ci --prefer-offline --no-audit
+
+# Generate Prisma Client
+RUN npx prisma generate
 
 # Copy all source files
 COPY . .
 
 # Set environment variable to skip telemetry during build
-ENV NEXT_TELEMETRY_DISABLED 1
-
-# Generate Prisma Client
-RUN npx prisma generate
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # Build the application
 RUN npm run build
 
-# Stage 3: Runner
+# Stage 2: Runner
 FROM node:18-alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -61,8 +56,8 @@ USER nextjs
 
 EXPOSE 3000
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 # Use startup script
 CMD ["/bin/sh", "./scripts/start.sh"]
