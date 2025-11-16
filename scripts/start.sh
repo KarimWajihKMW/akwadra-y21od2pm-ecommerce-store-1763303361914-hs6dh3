@@ -13,11 +13,7 @@ if [ -z "$DATABASE_URL" ]; then
 else
   echo "✓ DATABASE_URL is configured"
   
-  # Generate Prisma Client
-  echo "📦 Generating Prisma Client..."
-  npx prisma generate
-  
-  # Run database migrations
+  # Run database migrations (Prisma Client already generated during build)
   echo "🔄 Running database migrations..."
   npx prisma migrate deploy || echo "⚠️  Migration failed, continuing..."
 fi
