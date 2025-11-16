@@ -1,8 +1,11 @@
 # Multi-stage build for production Next.js application
 
 # Stage 1: Dependencies and Build
-FROM node:18-alpine AS builder
+FROM node:18-slim AS builder
 WORKDIR /app
+
+# Install OpenSSL for Prisma
+RUN apt-get update -y && apt-get install -y openssl
 
 # Copy package files and prisma schema
 COPY package.json package-lock.json* ./
@@ -24,14 +27,17 @@ ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
 # Stage 2: Runner
-FROM node:18-alpine AS runner
+FROM node:18-slim AS runner
 WORKDIR /app
+
+# Install OpenSSL for Prisma
+RUN apt-get update -y && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN groupadd --system --gid 1001 nodejs
+RUN useradd --system --uid 1001 nextjs
 
 # Copy necessary files from builder
 COPY --from=builder /app/public ./public
