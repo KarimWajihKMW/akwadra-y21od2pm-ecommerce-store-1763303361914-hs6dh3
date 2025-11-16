@@ -56,7 +56,7 @@ export default function ProfilePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           <Link
             href="/profile/orders"
-            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse"
+            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse cursor-pointer"
           >
             <div className="text-4xl">📦</div>
             <div>
@@ -66,7 +66,7 @@ export default function ProfilePage() {
           </Link>
           <Link
             href="/profile/groups"
-            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse"
+            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse cursor-pointer"
           >
             <div className="text-4xl">👥</div>
             <div>
@@ -76,7 +76,7 @@ export default function ProfilePage() {
           </Link>
           <Link
             href="/profile/points"
-            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse"
+            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse cursor-pointer"
           >
             <div className="text-4xl">⭐</div>
             <div>
@@ -86,7 +86,7 @@ export default function ProfilePage() {
           </Link>
           <Link
             href="/profile/invite"
-            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse"
+            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse cursor-pointer"
           >
             <div className="text-4xl">🎁</div>
             <div>
@@ -96,7 +96,7 @@ export default function ProfilePage() {
           </Link>
           <Link
             href="/profile/settings"
-            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse"
+            className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all flex items-center space-x-4 rtl:space-x-reverse cursor-pointer"
           >
             <div className="text-4xl">⚙️</div>
             <div>

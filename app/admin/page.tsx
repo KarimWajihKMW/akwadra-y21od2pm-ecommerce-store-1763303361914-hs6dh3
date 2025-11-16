@@ -62,74 +62,74 @@ export default function AdminPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Link
             href="/admin/products"
-            className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <div className="text-5xl mb-4">📱</div>
             <h3 className="text-2xl font-bold mb-2">{t('admin.products')}</h3>
             <p className="opacity-90">Manage products and inventory</p>
-            <button className="mt-4 bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <div className="mt-4 bg-white text-primary px-4 py-2 rounded-lg font-semibold inline-block">
               Manage
-            </button>
+            </div>
           </Link>
 
           <Link
             href="/admin/categories"
-            className="bg-gradient-to-br from-secondary to-secondary-dark text-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-secondary to-secondary-dark text-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <div className="text-5xl mb-4">📂</div>
             <h3 className="text-2xl font-bold mb-2">{t('admin.categories')}</h3>
             <p className="opacity-90">Organize product categories</p>
-            <button className="mt-4 bg-white text-secondary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <div className="mt-4 bg-white text-secondary px-4 py-2 rounded-lg font-semibold inline-block">
               Manage
-            </button>
+            </div>
           </Link>
 
           <Link
             href="/admin/orders"
-            className="bg-gradient-to-br from-success to-success-dark text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-success to-success-dark text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <div className="text-5xl mb-4">📦</div>
             <h3 className="text-2xl font-bold mb-2">{t('admin.orders')}</h3>
             <p className="opacity-90">Track and manage orders</p>
-            <button className="mt-4 bg-white text-success px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <div className="mt-4 bg-white text-success px-4 py-2 rounded-lg font-semibold inline-block">
               Manage
-            </button>
+            </div>
           </Link>
 
           <Link
             href="/admin/users"
-            className="bg-gradient-to-br from-purple-500 to-purple-700 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-purple-500 to-purple-700 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <div className="text-5xl mb-4">👥</div>
             <h3 className="text-2xl font-bold mb-2">{t('admin.users')}</h3>
             <p className="opacity-90">User management</p>
-            <button className="mt-4 bg-white text-purple-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <div className="mt-4 bg-white text-purple-700 px-4 py-2 rounded-lg font-semibold inline-block">
               Manage
-            </button>
+            </div>
           </Link>
 
           <Link
             href="/admin/analytics"
-            className="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <div className="text-5xl mb-4">📊</div>
             <h3 className="text-2xl font-bold mb-2">{t('admin.analytics')}</h3>
             <p className="opacity-90">View reports and analytics</p>
-            <button className="mt-4 bg-white text-blue-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <div className="mt-4 bg-white text-blue-700 px-4 py-2 rounded-lg font-semibold inline-block">
               View
-            </button>
+            </div>
           </Link>
 
           <Link
             href="/admin/settings"
-            className="bg-gradient-to-br from-gray-600 to-gray-800 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+            className="bg-gradient-to-br from-gray-600 to-gray-800 text-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 cursor-pointer"
           >
             <div className="text-5xl mb-4">⚙️</div>
             <h3 className="text-2xl font-bold mb-2">{t('admin.settings')}</h3>
             <p className="opacity-90">System settings</p>
-            <button className="mt-4 bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <div className="mt-4 bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold inline-block">
               Configure
-            </button>
+            </div>
           </Link>
         </div>
       </div>
