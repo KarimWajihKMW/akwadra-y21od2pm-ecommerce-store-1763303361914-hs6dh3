@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "groupBuying": "Group Buying",
+    "deals": "Deals",
+    "profile": "Profile",
+    "admin": "Admin",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signout": "Sign Out"
+  },
+  "home": {
+    "title": "Group Shopping Platform",
+    "subtitle": "Save More With Friends",
+    "flashDeals": "Flash Deals",
+    "groupDeals": "Group Deals",
+    "inviteFriends": "Invite Friends",
+    "earnPoints": "Earn Points",
+    "viewAll": "View All"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "startGroup": "Start Group",
+    "joinGroup": "Join Group",
+    "price": "Price",
+    "groupPrice": "Group Price",
+    "save": "Save",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "description": "Description",
+    "reviews": "Reviews"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signupHere": "Sign up here",
+    "signinHere": "Sign in here"
+  },
+  "profile": {
+    "myProfile": "My Profile",
+    "myOrders": "My Orders",
+    "myGroups": "My Groups",
+    "myPoints": "My Points",
+    "inviteFriends": "Invite Friends",
+    "settings": "Settings"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "categories": "Categories",
+    "orders": "Orders",
+    "users": "Users",
+    "analytics": "Analytics",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "language": "Language"
+  }
+}

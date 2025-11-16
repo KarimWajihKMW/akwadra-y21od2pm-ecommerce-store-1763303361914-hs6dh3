@@ -1,0 +1,196 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String
+  password      String
+  role          Role      @default(USER)
+  points        Int       @default(0)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  orders        Order[]
+  groupBuyings  GroupBuying[]
+  notifications Notification[]
+  reviews       Review[]
+  
+  @@index([email])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  nameAr      String
+  description String?
+  descriptionAr String?
+  slug        String    @unique
+  image       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  products    Product[]
+  
+  @@index([slug])
+}
+
+model Product {
+  id              String    @id @default(cuid())
+  name            String
+  nameAr          String
+  description     String
+  descriptionAr   String
+  price           Float
+  groupPrice      Float
+  discount        Float     @default(0)
+  image           String
+  images          String[]
+  stock           Int       @default(0)
+  isActive        Boolean   @default(true)
+  isFeatured      Boolean   @default(false)
+  isFlashDeal     Boolean   @default(false)
+  flashDealEnd    DateTime?
+  categoryId      String
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  category        Category  @relation(fields: [categoryId], references: [id])
+  orderItems      OrderItem[]
+  groupBuyingItems GroupBuyingItem[]
+  reviews         Review[]
+  
+  @@index([categoryId])
+  @@index([isFlashDeal])
+  @@index([isFeatured])
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  userId          String
+  status          OrderStatus @default(PENDING)
+  total           Float
+  paymentIntentId String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  
+  user            User        @relation(fields: [userId], references: [id])
+  items           OrderItem[]
+  
+  @@index([userId])
+  @@index([status])
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Float
+  createdAt DateTime @default(now())
+  
+  order     Order    @relation(fields: [orderId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  
+  @@index([orderId])
+  @@index([productId])
+}
+
+model GroupBuying {
+  id              String            @id @default(cuid())
+  userId          String
+  status          GroupBuyingStatus @default(ACTIVE)
+  requiredMembers Int               @default(5)
+  currentMembers  Int               @default(1)
+  expiresAt       DateTime
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  
+  user            User              @relation(fields: [userId], references: [id])
+  items           GroupBuyingItem[]
+  
+  @@index([userId])
+  @@index([status])
+}
+
+enum GroupBuyingStatus {
+  ACTIVE
+  COMPLETED
+  EXPIRED
+}
+
+model GroupBuyingItem {
+  id            String      @id @default(cuid())
+  groupBuyingId String
+  productId     String
+  quantity      Int
+  createdAt     DateTime    @default(now())
+  
+  groupBuying   GroupBuying @relation(fields: [groupBuyingId], references: [id])
+  product       Product     @relation(fields: [productId], references: [id])
+  
+  @@index([groupBuyingId])
+  @@index([productId])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  titleAr   String
+  message   String
+  messageAr String
+  isRead    Boolean  @default(false)
+  type      NotificationType @default(INFO)
+  createdAt DateTime @default(now())
+  
+  user      User     @relation(fields: [userId], references: [id])
+  
+  @@index([userId])
+  @@index([isRead])
+}
+
+enum NotificationType {
+  INFO
+  SUCCESS
+  WARNING
+  ERROR
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+  
+  @@index([userId])
+  @@index([productId])
+}
