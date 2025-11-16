@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
