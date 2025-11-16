@@ -46,6 +46,7 @@ COPY --from=builder /app/.next/static ./.next/static
 # Copy Prisma files
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
 
 # Copy startup script
 COPY --from=builder /app/scripts ./scripts
