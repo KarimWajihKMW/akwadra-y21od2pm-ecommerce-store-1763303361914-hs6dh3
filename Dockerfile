@@ -39,14 +39,16 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/i18n.ts ./i18n.ts
 
+# Install production dependencies (including prisma for migrations)
+RUN npm ci --only=production --prefer-offline --no-audit
+
 # Copy the standalone Next.js build
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# Copy Prisma files
+# Copy Prisma Client from builder
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
-COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
 
 # Copy startup script
 COPY --from=builder /app/scripts ./scripts
