@@ -20,7 +20,7 @@ export default function DealsPage() {
             ⚡ {t('home.flashDeals')} ⚡
           </h1>
           <p className="text-2xl text-gray-600">
-            Limited time offers - grab them before they're gone!
+            Limited time offers - grab them before they&apos;re gone!
           </p>
         </div>
 

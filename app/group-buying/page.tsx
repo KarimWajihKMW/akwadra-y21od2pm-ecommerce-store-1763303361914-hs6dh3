@@ -71,7 +71,7 @@ export default function GroupBuyingPage() {
         <div className="mt-12 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Start Your Own Group</h2>
           <p className="text-lg mb-6">
-            Can't find what you're looking for? Start a group and invite friends!
+            Can&apos;t find what you&apos;re looking for? Start a group and invite friends!
           </p>
           <button className="bg-white text-primary font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition transform hover:scale-105">
             {t('product.startGroup')}
