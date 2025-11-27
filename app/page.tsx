@@ -163,7 +163,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-            <p>&copy; 2024 Group Shopping Platform. All rights reserved.</p>
+            <p>&copy; 2024 كركر - منصة التسوق الجماعي. All rights reserved.</p>
           </div>
         </div>
       </footer>

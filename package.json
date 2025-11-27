@@ -1,8 +1,8 @@
 {
-  "name": "toto",
+  "name": "karkar",
   "version": "0.1.0",
   "private": true,
-  "description": "توتو - منصة التسوق الجماعي الحديثة",
+  "description": "كركر - منصة التسوق الجماعي الحديثة",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
