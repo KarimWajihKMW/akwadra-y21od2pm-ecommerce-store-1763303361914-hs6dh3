@@ -1,8 +1,8 @@
 {
-  "name": "lulu",
+  "name": "toto",
   "version": "0.1.0",
   "private": true,
-  "description": "لولو - منصة التسوق الجماعي الحديثة",
+  "description": "توتو - منصة التسوق الجماعي الحديثة",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,4 +1,4 @@
-# 🛍️ لولو - منصة التسوق الجماعي
+# 🛍️ توتو - منصة التسوق الجماعي
 
 A modern, full-featured e-commerce platform inspired by Pinduoduo, built with Next.js 14, featuring group buying, flash deals, and a comprehensive admin panel.
 
@@ -35,4 +35,3 @@ A modern, full-featured e-commerce platform inspired by Pinduoduo, built with Ne
 ## 🛠️ Installation & Setup
 
 ### 1. Clone the repository
-
