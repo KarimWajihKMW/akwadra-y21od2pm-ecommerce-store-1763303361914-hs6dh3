@@ -4,7 +4,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'صاصا - منصة التسوق الجماعي',
+  title: 'Melmasdar - منصة التسوق الجماعي',
   description: 'وفر أكثر مع الشراء الجماعي - Save more with group buying',
 };
 
