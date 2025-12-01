@@ -1,8 +1,8 @@
 {
-  "name": "melmasdar",
+  "name": "toto-ala-kaboto",
   "version": "0.1.0",
   "private": true,
-  "description": "Melmasdar - منصة التسوق الجماعي الحديثة",
+  "description": "توتو على كبوتو - منصة التسوق الجماعي الحديثة",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
